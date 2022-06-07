@@ -23,6 +23,10 @@ spring:
   output:
     ansi:
       enabled: always
+  rabbitmq:
+    addresses: amqps://kgagnkbe:t27bKMPxhk63o4-kDLLcstR2XAaTOVVJ@woodpecker.rmq.cloudamqp.com/kgagnkbe
+    
+     
 logging:
   level:
     '[com.ead]': TRACE
