@@ -24,7 +24,7 @@ spring:
     ansi:
       enabled: always
   rabbitmq:
-    addresses: amqps://kgagnkbe:t27bKMPxhk63o4-kDLLcstR2XAaTOVVJ@woodpecker.rmq.cloudamqp.com/kgagnkbe
+    addresses: teste
     
      
 logging:
