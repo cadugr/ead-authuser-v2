@@ -38,7 +38,9 @@ ead:
   api:
     url:
       course: 'http://ead-course-service/ead-course' #de forma mais dinamica, passamos apenas o id da aplicação que queremos nos conectar e que está registrado no service-registry
-
+  broker:
+    exchange:
+      userEvent: ead.userevent
 eureka:
   client:
     service-url:
