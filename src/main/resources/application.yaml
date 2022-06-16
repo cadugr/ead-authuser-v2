@@ -24,7 +24,7 @@ spring:
     ansi:
       enabled: always
   rabbitmq:
-    addresses: teste
+    addresses: ${RABBIT_CONNECTION}
     
      
 logging:
