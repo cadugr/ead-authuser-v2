@@ -1,5 +1,6 @@
 package com.ead.authuser.clients;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -33,7 +34,8 @@ public class CourseClient {
 
 	@Value("${ead.api.url.course}")
 	String REQUEST_URL_COURSE;
-
+	
+    //@Retry(name = "retryInstance", fallbackMethod = "retryfallback")
 	public Page<CourseDto> getAllCoursesByUser(UUID userId, Pageable pageable) {
 		List<CourseDto> searchResult = null;
 		String url = REQUEST_URL_COURSE + utilsService.createUrlGetAllCoursesByUser(userId, pageable);
@@ -52,5 +54,12 @@ public class CourseClient {
 		log.info("Ending request /courses userId {} ", userId);
 		return new PageImpl<>(searchResult);
 	}
+    
+    //Método apenas de teste do fallback
+    public Page<CourseDto> retryfallback(UUID userId, Pageable pageable, Throwable t) {
+    	log.error("Inside retry retryfallback, cause - {}", t.toString());
+    	List<CourseDto> searchResult = new ArrayList<>();
+    	return new PageImpl<>(searchResult);
+    }
 
 }
